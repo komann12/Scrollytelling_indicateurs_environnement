@@ -1,0 +1,72 @@
+body {
+    background-color: #02aded;
+}
+
+body h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#intro, #outro {
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    color: #fff;
+}
+
+#intro div, #outro div {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+#intro button {
+    font-size: 3rem;
+}
+
+#outro a {
+    color: #3b3b3b;
+}
+
+
+#scrolly {
+    background-color: #02aded;
+}
+
+figure {
+    border-radius: 1rem;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+figure h1 {
+    color: #3b3b3b;
+    font-size: 1.5rem;
+}
+
+figure svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.step {
+    color: #fff;
+}
+
+.step h1 {
+    writing-mode: vertical-rl;
+    color: #3b3b3b;
+    font-size: 3rem;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step.is-active h1 {
+    color: #fff;
+}

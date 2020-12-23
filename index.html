@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Scrollytelling des indicateurs de l'Environnement</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link href="src/style.css" rel="stylesheet">
+</head>
+
+<body>
+<main class="container">
+    <section id="intro">
+        <div>
+            <h1>L'environnement, ça va bien se passer ?</h1>
+            <button id="bet-button" class="btn btn-outline-light">Je fais le pari</button>
+        </div>
+    </section>
+
+    <section id="scrolly" class="row">
+
+        <figure id="my_dataviz" class="col-10">
+            <h1>Eau douce renouvelable (par habitant, m<sup>3</sup>)</h1>
+
+            <form class="step-1 invisible">
+                <div class="row justify-content-center align-items-center">
+                    <label class="col-auto" for="bet-select">Faites le pari ! Entre 1985 et 2014 cet indicateur a </label>
+                    <div class="col-auto">
+                        <select class="form-select" id="bet-select">
+                            <option value="inc">augmenté</option>
+                            <option value="dec">diminué</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="col-12">
+                <span class="step-1 invisible col-12" id="curscore-span"><strong>Votre score actuel : 0</strong></span>
+            </div>
+
+            <div class="row align-items-center">
+                <span id="explain-span" class="col-2">
+                    La disponibilité en eau douce affecte la survie de nombreuses espèces, dont les humains.
+                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
+                </span>
+                <svg id="viz1_svg" class="img-fluid col-8"></svg>
+            </div>
+
+        </figure>
+
+        <article class="col-2">
+            <div class="step" data-step="1">
+                <h1>Présentation des données</h1>
+            </div>
+            <div class="step" data-step="2">
+                <h1>Prédiction</h1>
+            </div>
+            <div class="step" data-step="3">
+                <h1>Résultats</h1>
+            </div>
+            <div class="step" data-step="4">
+                <h1>Pour aller plus loin</h1>
+            </div>
+        </article>
+
+    </section>
+
+    <section id="outro">
+        <div>
+            <h1>À propos</h1>
+            <p>Ce projet a été réalisé dans le cadre de l'<a href="https://lyondataviz.github.io/teaching/lyon1-m2/2020/">UE DataViz</a>, pour le M2 Data Science de l'Université
+                Claude Bernard Lyon 1.
+            </p>
+            <span>Équipe : Victor Guadebois, Joachim Jaafar, Kostia Mannevy, Gabriel Sequeira</span>
+        </div>
+    </section>
+</main>
+
+
+<script src="src/main.js"></script>
+</body>
+</html>
