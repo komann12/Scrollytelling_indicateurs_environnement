@@ -3,8 +3,11 @@
 
 const main = d3.select("main");
 const scrolly = main.select("#scrolly");
-const figure = scrolly.select("figure");
-const step1_items = figure.selectAll(".step-1")
+const figure = scrolly.selectAll("figure");
+const dataviz1 = scrolly.select("#my_dataviz");
+const dataviz2 = scrolly.select("#my_dataviz2");
+const step1_items = dataviz1.selectAll(".step-1");
+const step2_items = dataviz2.selectAll(".step-5");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
 const scroller = scrollama();
@@ -40,6 +43,29 @@ function handleStepEnter(response) {
                 current_score -= 1;
             }
             document.getElementById("curscore-span").innerText = `Votre score actuel : ${current_score}`
+            first_viz_done = true;
+        }
+    } else if (response.index === 4){
+        console.log("here step transition 4");
+        dataviz1.classed("invisible", true);
+    } else if (response.index === 5){
+        console.log("here step transition 5");
+        dataviz2.classed("invisible", false);
+        step2_items.classed("invisible", false);
+    } else if (response.index === 7){
+        console.log("here step 7");
+        document.getElementById("explain-span2").innerText = "Et... patatra ! Les ressources en eau douce " +
+            "renouvelable ont fortement diminue entre 1985 et 2014 !";
+        const svg = d3.select("#viz2_svg")
+        draw_first_viz(svg, france_data_original);
+        if (first_viz_done === false) {
+            let bet_val = document.getElementById("bet-select2").value
+            if(bet_val === "dec") {
+                current_score += 1;
+            } else {
+                current_score -= 1;
+            }
+            document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
             first_viz_done = true;
         }
     }
@@ -91,18 +117,18 @@ function draw_first_viz(first_viz_svg, new_data) {
         .remove();
 }
 
-function create_first_viz() {
+function create_first_viz(viz, data_json) {
     const width = 700;
     const height = 350;
     const padding = 40;
 
     const svg = d3
-        .select("#viz1_svg")
+        .select(viz)
         .attr("width", width)
         .attr("height", height)
         .attr("viewBox", `0 0 ${width} ${height}`);
 
-    d3.json("https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.PC.json").then(function (data) {
+    d3.json(data_json).then(function (data) {
         france_data_original = data["France"]
         let france_data_1 = [];
         const years_count = france_data_original.length;
@@ -137,8 +163,8 @@ function create_first_viz() {
     });
 }
 
-create_first_viz();
-
+create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.PC.json");
+create_first_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
 
 /* GENERAL */
 
