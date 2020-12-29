@@ -46,27 +46,26 @@ function handleStepEnter(response) {
             first_viz_done = true;
         }
     } else if (response.index === 4){
-        console.log("here step transition 4");
         dataviz1.classed("invisible", true);
     } else if (response.index === 5){
-        console.log("here step transition 5");
         dataviz2.classed("invisible", false);
         step2_items.classed("invisible", false);
+        document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
     } else if (response.index === 7){
         console.log("here step 7");
         document.getElementById("explain-span2").innerText = "Et... patatra ! Les ressources en eau douce " +
             "renouvelable ont fortement diminue entre 1985 et 2014 !";
         const svg = d3.select("#viz2_svg")
-        draw_first_viz(svg, france_data_original);
-        if (first_viz_done === false) {
+        draw_second_viz(svg, france_data_original2);
+        if (second_viz_done === false) {
             let bet_val = document.getElementById("bet-select2").value
-            if(bet_val === "dec") {
+            if(bet_val === "same") {
                 current_score += 1;
             } else {
                 current_score -= 1;
             }
             document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
-            first_viz_done = true;
+            second_viz_done = true;
         }
     }
 }
@@ -163,8 +162,75 @@ function create_first_viz(viz, data_json) {
     });
 }
 
+let france_data_original2 = []
+let france_data2 = []
+let second_viz_xScale;
+let second_viz_yScale;
+let second_viz_done = false;
+
+function draw_second_viz(viz_svg, new_data) {
+    let line = viz_svg.append("path")
+        .datum(new_data)
+        .attr("fill", "none")
+        .attr("stroke", "#02aded")
+        .attr("stroke-width", 5)
+        .attr("d", d3.line()
+            .x(d => second_viz_xScale(d.year))
+            .y(d => second_viz_yScale(d.value))
+        )
+
+    line.exit()
+        .remove();
+}
+
+function create_second_viz(viz, data_json) {
+    const width = 700;
+    const height = 350;
+    const padding = 40;
+
+    const svg = d3
+        .select(viz)
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", `0 0 ${width} ${height}`);
+
+    d3.json(data_json).then(function (data) {
+        france_data_original2 = data["France"]
+        let france_data_1 = [];
+        const years_count = france_data_original2.length;
+        for (let i = 0; i < years_count; i++) {
+            if (i < years_count / 2) {
+                france_data_1.push(france_data_original2[i]);
+            }
+        }
+        france_data2 = france_data_1;
+
+        second_viz_xScale = d3.scaleLinear()
+            .domain(d3.extent(france_data_original2, d => d.year))
+            .range([padding, width - padding]);
+        let xAxis = d3.axisBottom(second_viz_xScale)
+            .tickFormat(d3.format("d"));
+        second_viz_yScale = d3.scaleLinear()
+            .domain(d3.extent(france_data_original2, d => d.value))
+            .range([height - padding, padding]);
+        let yAxis = d3.axisLeft(second_viz_yScale)
+            .tickFormat(d3.format("d"));
+
+        svg.append("g")
+            .attr("transform", `translate(0, ${height - padding})`)
+            .call(xAxis);
+        svg.append("g")
+            .attr("transform", `translate(${padding}, 0)`)
+            .call(yAxis);
+
+        draw_second_viz(svg, france_data_1);
+
+    });
+}
+
 create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.PC.json");
-create_first_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
+
+create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
 
 /* GENERAL */
 
