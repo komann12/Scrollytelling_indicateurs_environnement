@@ -49,12 +49,13 @@ function handleStepEnter(response) {
         dataviz1.classed("invisible", true);
     } else if (response.index === 5){
         dataviz2.classed("invisible", false);
+        step2_items.classed("invisible", true);
+    } else if (response.index === 6) {
         step2_items.classed("invisible", false);
         document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
     } else if (response.index === 7){
-        console.log("here step 7");
-        document.getElementById("explain-span2").innerText = "Et... patatra ! Les ressources en eau douce " +
-            "renouvelable ont fortement diminue entre 1985 et 2014 !";
+        document.getElementById("explain-span2").innerText = "Et... en fait les ressources en eau douce " +
+            "renouvelable sont restés les mêmes entre 1985 et 2014 !";
         const svg = d3.select("#viz2_svg")
         draw_second_viz(svg, france_data_original2);
         if (second_viz_done === false) {
