@@ -6,11 +6,15 @@ const scrolly = main.select("#scrolly");
 const figure = scrolly.selectAll("figure");
 const dataviz1 = scrolly.select("#my_dataviz");
 const dataviz2 = scrolly.select("#my_dataviz2");
+const dataviz3 = scrolly.select("#my_dataviz3");
 const step1_items = dataviz1.selectAll(".step-1");
 const step2_items = dataviz2.selectAll(".step-5");
+const step3_items = dataviz3.selectAll(".step-10");
+const diag = dataviz3.select("#viz3_svg");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
 const scroller = scrollama();
+let third_viz_done = false;
 
 function handleResize() {
     var stepH = Math.floor(window.innerHeight * 0.75);
@@ -67,6 +71,31 @@ function handleStepEnter(response) {
             }
             document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
             second_viz_done = true;
+        }
+    } else if (response.index === 9){
+        dataviz1.classed("invisible", true);
+        dataviz2.classed("invisible", true);
+        diag.classed("invisible", true);
+    } else if (response.index === 10){
+        dataviz3.classed("invisible", false);
+        step3_items.classed("invisible", true);
+    } else if (response.index === 11) {
+        step3_items.classed("invisible", false);
+        document.getElementById("curscore-span3").innerText = `Votre score actuel : ${current_score}`
+    } else if (response.index === 12){
+        diag.classed("invisible", false);
+        document.getElementById("explain-span3").innerText = "La surface de forêt " +
+            "disparue entre 1985 et 2016 est de 1 324 449 km2. Donc la réponse la plus proche c'est la france";
+        const svg = d3.select("#viz3_svg")
+        if (third_viz_done === false) {
+            let bet_val = document.getElementById("france").checked
+            if(bet_val === true) {
+                current_score += 1;
+            } else {
+                current_score -= 1;
+            }
+            document.getElementById("curscore-span3").innerText = `Votre score actuel : ${current_score}`
+            third_viz_done = true;
         }
     }
 }
@@ -163,6 +192,8 @@ function create_first_viz(viz, data_json) {
     });
 }
 
+/* VISU 2*/
+
 let france_data_original2 = []
 let france_data2 = []
 let second_viz_xScale;
@@ -229,9 +260,76 @@ function create_second_viz(viz, data_json) {
     });
 }
 
+/*VISU 3*/
+
+function create_third_viz(viz) {
+        var surfaceParis = 105;
+        var surfaceLondre = 1572;
+        var surfacePekin = 16410;
+        var surfaceFrance = 643801;
+        var surfaceTotale = 1324449;//data[1990][34822] - data[2016][34822];
+        var superficies = [
+          ["Paris", "Londre", "Pekin", "France", "Forêts"],
+          [
+            surfaceParis,
+            surfaceLondre,
+            surfacePekin,
+            surfaceFrance,
+            surfaceTotale
+          ]
+        ];
+
+        const width = 500;
+        const height = 120;
+        const padding = 40;
+
+        var xScale = d3
+          .scaleLinear()
+          .domain([0, superficies[1].length])
+          .range([0, width]);
+
+        var yScale = d3
+          .scaleLinear()
+          .domain([0, d3.max(superficies[1])])
+          .range([0, height]);
+
+        var svg = d3
+          .select("#viz3_svg")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height)
+          .style("background-color", "lightgrey")
+          .attr("display", "none");
+
+        svg
+          .selectAll(".bar")
+          .data(superficies[1])
+          .enter()
+          .append("rect")
+          .attr("x", (d, i) => xScale(i))
+          .attr("y", (d) => height - yScale(d))
+          .attr("width", xScale(0.9))
+          .attr("height", (d) => yScale(d));
+
+        svg
+          .selectAll("text")
+          .data(superficies[0])
+          .enter()
+          .append("text")
+          .attr("x", (d, i) => xScale(i) + 17)
+          .attr("y", (d) => height - 5)
+          .text(function (d) {
+            return d;
+          })
+          .style("fill", "blue");
+      ;
+}
+
 create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.PC.json");
 
 create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
+
+create_third_viz("#viz3_svg");
 
 /* GENERAL */
 
