@@ -31,6 +31,7 @@ function aller_plus_loin_viz1(){
 
 function transition_viz1(){
     dataviz1.classed("invisible", true);
+    dataviz2.classed("invisible", true);
 }
 
 function presentation_viz2(){
@@ -61,6 +62,7 @@ function resultat_viz2(){
 }
 
 function aller_plus_loin_viz2(){
+    dataviz2.classed("invisible", false);
     document.body.style.backgroundColor = "#02aded";
     document.getElementById("scrolly").style.backgroundColor = "#02aded";
     document.getElementById("explain-span2").innerText = "Mais alors à quoi c'est du ? à la baisse d'eau " +
@@ -68,7 +70,6 @@ function aller_plus_loin_viz2(){
 }
 
 function transition_viz2(){
-    dataviz1.classed("invisible", true);
     dataviz2.classed("invisible", true);
     diag.classed("invisible", true);
     dataviz3.classed("invisible", true);
