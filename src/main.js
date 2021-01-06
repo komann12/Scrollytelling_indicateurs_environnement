@@ -72,10 +72,15 @@ function handleStepEnter(response) {
             document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
             second_viz_done = true;
         }
+    } else if (response.index === 8){
+        document.body.style.backgroundColor = "#02aded";
+        document.getElementById("scrolly").style.backgroundColor = "#02aded";
     } else if (response.index === 9){
         dataviz1.classed("invisible", true);
         dataviz2.classed("invisible", true);
         diag.classed("invisible", true);
+        document.body.style.backgroundColor = "#6e8b3d";
+        document.getElementById("scrolly").style.backgroundColor = "#6e8b3d";
     } else if (response.index === 10){
         dataviz3.classed("invisible", false);
         step3_items.classed("invisible", true);
@@ -309,7 +314,8 @@ function create_third_viz(viz) {
           .attr("x", (d, i) => xScale(i))
           .attr("y", (d) => height - yScale(d))
           .attr("width", xScale(0.9))
-          .attr("height", (d) => yScale(d));
+          .attr("height", (d) => yScale(d))
+          .attr("fill", "#6e8b3d");
 
         svg
           .selectAll("text")
