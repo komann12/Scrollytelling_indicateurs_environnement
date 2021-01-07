@@ -228,7 +228,7 @@ function create_fourth_viz(viz, data_csv){
         .attr("class", "graticule")
         .attr("d", path);
 
-    d3.json("data/world-countries.json").then(function(collection) {
+    d3.json("data/viz_4/world-countries.json").then(function(collection) {
         var countries = svg.selectAll("path")
             .data(collection.features)
             .enter().append("path")

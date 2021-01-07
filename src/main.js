@@ -92,9 +92,9 @@ init();
 
 let current_score = 0;
 
-create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.PC.json");
+create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_1/ER.H2O.INTR.PC.json");
 
-create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
+create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_2/ER.H2O.INTR.K3.json");
 
 create_third_viz("#viz3_svg");
 
@@ -123,7 +123,7 @@ var sliderTime = d3
     .on('onchange', val => {
         d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
         year = d3.timeFormat('%Y')(val);
-        file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/emissions_import_"+ year +".csv";
+        file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_"+ year +".csv";
         create_fourth_viz("#viz4_svg", file);
     });
 
