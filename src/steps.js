@@ -106,9 +106,22 @@ function resultat_viz3(){
 }
 
 function aller_plus_loin_viz3(){
-
+    dataviz3.classed("invisible", false);
+    step3_items.classed("invisible", false);
 }
 
 function transition_viz3(){
+    dataviz3.classed("invisible", true);
+    step3_items.classed("invisible", true);
+    dataviz4.classed("invisible", true);
+    step4_items.classed("invisible", true);
+}
+
+function presentation_viz4(){
+    dataviz4.classed("invisible", false);
+    step4_items.classed("invisible", false);
+}
+
+function prediction_viz4(){
 
 }

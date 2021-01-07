@@ -70,3 +70,20 @@ figure svg {
 .step.is-active h1 {
     color: #fff;
 }
+
+#world {
+    display: block;
+    margin: auto;
+}
+
+.country:hover {
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.graticule {
+    fill: none;
+    stroke: #777;
+    stroke-width: .5px;
+    stroke-opacity: .5;
+}

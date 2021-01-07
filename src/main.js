@@ -7,9 +7,11 @@ const figure = scrolly.selectAll("figure");
 const dataviz1 = scrolly.select("#my_dataviz");
 const dataviz2 = scrolly.select("#my_dataviz2");
 const dataviz3 = scrolly.select("#my_dataviz3");
+const dataviz4 = scrolly.select("#my_dataviz4");
 const step1_items = dataviz1.selectAll(".step-1");
 const step2_items = dataviz2.selectAll(".step-5");
 const step3_items = dataviz3.selectAll(".step-10");
+const step4_items = dataviz3.selectAll(".step-15");
 const diag = dataviz3.select("#viz3_svg");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
@@ -32,7 +34,6 @@ function handleStepEnter(response) {
         return i === response.index;
     });
 
-    console.log(response.index);
     if (response.index === 0) {
         presentation_viz1();
     } else if (response.index === 1) {
@@ -59,6 +60,12 @@ function handleStepEnter(response) {
         prediction_viz3();
     } else if (response.index === 12){
         resultat_viz3();
+    } else if (response.index === 13){
+        aller_plus_loin_viz3();
+    } else if (response.index === 14){
+        transition_viz3();
+    } else if (response.index === 15){
+        presentation_viz4();
     }
 }
 
@@ -90,6 +97,8 @@ create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicat
 create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/ER.H2O.INTR.K3.json");
 
 create_third_viz("#viz3_svg");
+
+create_fourth_viz("#viz4_svg");
 
 /* GENERAL */
 
