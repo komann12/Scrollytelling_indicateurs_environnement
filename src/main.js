@@ -138,3 +138,5 @@ var gTime = d3
 gTime.call(sliderTime);
 
 d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
+
+create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2010.csv");
