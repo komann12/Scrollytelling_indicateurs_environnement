@@ -107,8 +107,8 @@ document.getElementById("bet-button").addEventListener("click", () => {
 });
 
 // Time
-var dataTime = d3.range(0, 6).map(function(d) {
-    return new Date(2010 + d, 10, 3);
+var dataTime = d3.range(0, 11).map(function(d) {
+    return new Date(2005 + d, 10, 3);
 });
 
 var sliderTime = d3
