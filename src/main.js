@@ -121,7 +121,6 @@ var sliderTime = d3
     .tickValues(dataTime)
     .default(new Date(1998, 10, 3))
     .on('onchange', val => {
-        console.log(val);
         d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
         year = d3.timeFormat('%Y')(val);
         file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/emissions_import_"+ year +".csv";
