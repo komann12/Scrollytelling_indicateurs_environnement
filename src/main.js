@@ -98,7 +98,7 @@ create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indica
 
 create_third_viz("#viz3_svg");
 
-create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/emission_import.json");
+create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/emissions_import.csv");
 
 /* GENERAL */
 

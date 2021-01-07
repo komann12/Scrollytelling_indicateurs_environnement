@@ -203,7 +203,7 @@ function create_third_viz(viz) {
 
 /* VISU 4 */
 
-function create_fourth_viz(viz, data_json){
+function create_fourth_viz(viz, data_csv){
     const width = 800, height = 800;
 
     const projection = d3.geoOrthographic()
@@ -236,12 +236,9 @@ function create_fourth_viz(viz, data_json){
             .attr("class", "country")
             .attr("id", d => d.id);
 
-        d3.json(data_json).then(function (data) {
-            // 60 is the number of class in temperature.css
-            console.log(data);
-            var quantile = d3.scaleQuantile().domain([
-                d3.min(data, e => e["2005"]),
-                d3.max(data, e => +e["2005"])])
+        d3.csv(data_csv).then(function(data) {
+            // 60 is the number of class in color_viz4.css
+            var quantile = d3.scaleQuantile().domain([0, 500])
                 .range(d3.range(60));
 
             var legend = svg.append('g')
@@ -255,10 +252,10 @@ function create_fourth_viz(viz, data_json){
                 .attr('height', '5px')
                 .attr('width', '20px')
                 .attr('x', '0px')
-                .attr("class", d => "temperature-" + d);
+                .attr("class", d => "gaz-" + d);
 
             legendScale = d3.scaleLinear()
-                .domain([d3.min(data, e => +e.temperature), d3.max(data, e => +e.temperature)])
+                .domain([0, 500])
                 .range([0, 60 * 5]);
 
             svg.append("g")
@@ -267,7 +264,7 @@ function create_fourth_viz(viz, data_json){
 
             data.forEach(function(e,i) {
                 d3.select("#" + e.country)
-                    .attr("class", d => "country temperature-" + quantile(+e.temperature));
+                    .attr("class", d => "country color-" + quantile(+e.gaz));
             });
         });
     });
