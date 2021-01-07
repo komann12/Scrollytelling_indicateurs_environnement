@@ -105,3 +105,37 @@ create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indica
 document.getElementById("bet-button").addEventListener("click", () => {
     window.location.href = "#presentation_viz1";
 });
+
+// Time
+var dataTime = d3.range(0, 6).map(function(d) {
+    return new Date(2010 + d, 10, 3);
+});
+
+var sliderTime = d3
+    .sliderBottom()
+    .min(d3.min(dataTime))
+    .max(d3.max(dataTime))
+    .step(1000 * 60 * 60 * 24 * 365)
+    .width(300)
+    .tickFormat(d3.timeFormat('%Y'))
+    .tickValues(dataTime)
+    .default(new Date(1998, 10, 3))
+    .on('onchange', val => {
+        console.log(val);
+        d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
+        year = d3.timeFormat('%Y')(val);
+        file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/emissions_import_"+ year +".csv";
+        create_fourth_viz("#viz4_svg", file);
+    });
+
+var gTime = d3
+    .select('div#slider-time')
+    .append('svg')
+    .attr('width', 500)
+    .attr('height', 100)
+    .append('g')
+    .attr('transform', 'translate(30,30)');
+
+gTime.call(sliderTime);
+
+d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
