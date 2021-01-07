@@ -103,8 +103,5 @@ create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indica
 /* GENERAL */
 
 document.getElementById("bet-button").addEventListener("click", () => {
-    window.scroll({
-        top: 0.8 * window.innerHeight * 2.5,
-        behavior: 'smooth'
-    });
+    window.location.href = "#presentation_viz1";
 });
