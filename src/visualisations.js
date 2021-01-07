@@ -252,7 +252,7 @@ function create_fourth_viz(viz, data_csv){
                 .attr('height', '5px')
                 .attr('width', '20px')
                 .attr('x', '0px')
-                .attr("class", d => "gaz-" + d);
+                .attr("class", d => "color-" + d);
 
             legendScale = d3.scaleLinear()
                 .domain([0, 500])
