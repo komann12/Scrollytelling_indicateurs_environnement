@@ -79,6 +79,13 @@ figure svg {
 .country:hover {
     stroke: black;
     stroke-width: 1px;
+    opacity: 0.5;
+}
+
+.country {
+    stroke: black;
+    stroke-width: 1px;
+    fill: grey;
 }
 
 .graticule {

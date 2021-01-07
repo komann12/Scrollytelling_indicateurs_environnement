@@ -65,8 +65,7 @@ function aller_plus_loin_viz2(){
     dataviz2.classed("invisible", false);
     document.body.style.backgroundColor = "#02aded";
     document.getElementById("scrolly").style.backgroundColor = "#02aded";
-    document.getElementById("explain-span2").innerText = "Mais alors à quoi c'est du ? à la baisse d'eau " +
-        "potable dans le monde ou à la hausse de la consommation dans le monde ?";
+    document.getElementById("explain-span2").innerText = "La population augmente mais les ressources en eau potables n'augmentent pas du tout, c'est problématique !";
 }
 
 function transition_viz2(){
