@@ -108,9 +108,13 @@ function resultat_viz3(){
 function aller_plus_loin_viz3(){
     dataviz3.classed("invisible", false);
     step3_items.classed("invisible", false);
+    document.body.style.backgroundColor = "#6e8b3d";
+    document.getElementById("scrolly").style.backgroundColor = "#6e8b3d";
 }
 
 function transition_viz3(){
+    document.body.style.backgroundColor = "#9AA39B";
+    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
     dataviz3.classed("invisible", true);
     step3_items.classed("invisible", true);
     dataviz4.classed("invisible", true);
