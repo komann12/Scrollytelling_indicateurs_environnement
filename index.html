@@ -29,6 +29,14 @@
             <h2>L'eau potable <i class="em em-whale"></i></h2>
             <h1>Eau douce renouvelable (par habitant, m<sup>3</sup>)</h1>
 
+            <div class="row">
+                <span id="explain-span" class="col-2">
+                    La disponibilité en eau douce affecte la survie de nombreuses espèces, dont les humains.
+                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
+                </span>
+                <svg id="viz1_svg" class="img-fluid col-8"></svg>
+            </div>
+
             <form class="step-1 invisible">
                 <div class="row justify-content-center align-items-center">
                     <label class="col-auto" for="bet-select">Faites le pari ! Entre 1985 et 2014 cet indicateur a </label>
@@ -47,17 +55,19 @@
                 <span class="step-1 invisible col-12" id="curscore-span"><strong>Votre score actuel : 0</strong></span>
             </div>
 
-            <div class="row align-items-center">
-                <span id="explain-span" class="col-2">
-                    La disponibilité en eau douce affecte la survie de nombreuses espèces, dont les humains.
-                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
-                </span>
-                <svg id="viz1_svg" class="img-fluid col-8"></svg>
-            </div>
         </figure>
 
         <figure id="my_dataviz2" class="col-10 invisible">
             <h1>Eau douce renouvelable en tonnes</h1>
+
+            <div class="row align-items-center">
+                <span id="explain-span2" class="col-2">
+                    Nous avons vu l'évolution de l'eau douce disponible par habitant, voyons maintenant celle des
+                    réserves d'eau douce .
+                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
+                </span>
+                <svg id="viz2_svg" class="img-fluid col-8"></svg>
+            </div>
 
             <form class="step-5 invisible">
                 <div class="row justify-content-center align-items-center">
@@ -74,14 +84,6 @@
 
             <div class="col-12">
                 <span class="step-5 invisible col-12" id="curscore-span2"><strong>Votre score actuel : 0</strong></span>
-            </div>
-
-            <div class="row align-items-center">
-                <span id="explain-span2" class="col-2">
-                    La disponibilité en eau douce affecte la survie de nombreuses espèces, dont les humains.
-                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
-                </span>
-                <svg id="viz2_svg" class="img-fluid col-8"></svg>
             </div>
 
         </figure>
@@ -118,11 +120,11 @@
                 </div>
             </form>
 
-            <div class="col-12">
+            <div class="col-8">
                 <span class="step-10 invisible col-12" id="curscore-span3"><strong>Votre score actuel : 0</strong></span>
             </div>
 
-            <div class="row align-items-center">
+            <div class="row justify-content-center align-items-center">
                 <span id="explain-span3" class="col-2">
                     La surface de forêt affecte la survie de nombreuses espèces, dont les humains.
                     Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.

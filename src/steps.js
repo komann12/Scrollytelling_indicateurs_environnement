@@ -25,7 +25,7 @@ function resultat_viz1(){
 
 function aller_plus_loin_viz1(){
     dataviz1.classed("invisible", false);
-    document.getElementById("explain-span").innerText = "Mais alors à quoi c'est du ? A la baisse d'eau " +
+    document.getElementById("explain-span").innerText = "Mais alors à quoi c'est dû ? A la baisse d'eau " +
         "potable dans le monde ou à la hausse de la consommation dans le monde ?";
 }
 

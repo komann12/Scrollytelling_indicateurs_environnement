@@ -238,7 +238,7 @@ function create_fourth_viz(viz, data_csv){
 
         d3.csv(data_csv).then(function(data) {
             // 60 is the number of class in color_viz4.css
-            var quantile = d3.scaleQuantile().domain([0, 500])
+            var quantile = d3.scaleQuantile().domain([0, 900])
                 .range(d3.range(60));
 
             var legend = svg.append('g')
@@ -255,7 +255,7 @@ function create_fourth_viz(viz, data_csv){
                 .attr("class", d => "color-" + d);
 
             legendScale = d3.scaleLinear()
-                .domain([0, 500])
+                .domain([0, 900])
                 .range([0, 60 * 5]);
 
             svg.append("g")
