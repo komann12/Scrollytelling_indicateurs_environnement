@@ -137,6 +137,8 @@ function create_second_viz(viz, data_json) {
 
 /*VISU 3*/
 
+let third_viz_done = false;
+
 function create_third_viz(viz) {
     var surfaceParis = 105;
     var surfaceLondre = 1572;
@@ -203,11 +205,15 @@ function create_third_viz(viz) {
 
 /* VISU 4 */
 
-function create_fourth_viz(viz, data_csv){
+pays_prediction = "";
+
+let fourth_viz_done = false;
+
+function create_fourth_viz(viz, data_csv, scale){
     const width = 800, height = 800;
 
     const projection = d3.geoOrthographic()
-        .scale(150)
+        .scale(130)
         .translate([width / 3, height / 5])
         .clipAngle(90) // without this options countries on the other side are visible
         .precision(.1)
@@ -236,16 +242,20 @@ function create_fourth_viz(viz, data_csv){
             .attr("class", "country")
             .attr("id", d => d.id)
             .on("mousemove", (event, d) => {
-                document.getElementById("explain-pays").innerText = d.properties.name + ": "
-                    + d.properties.value + " millions de Tonnes";
+
             })
             .on("mouseout", (event, d) => {
 
+            })
+            .on("click", (event, d) => {
+                document.getElementById("explain-pays").innerText = d.properties.name + ": "
+                    + d.properties.value + " millions de Tonnes";
+                pays_prediction = d.properties.name;
             });
 
         d3.csv(data_csv).then(function(data) {
             // 60 is the number of class in color_viz4.css
-            var quantile = d3.scaleQuantile().domain([0, 900])
+            var quantile = d3.scaleQuantile().domain([0, scale])
                 .range(d3.range(60));
 
             var legend = svg.append('g')
@@ -262,7 +272,7 @@ function create_fourth_viz(viz, data_csv){
                 .attr("class", d => "color-" + d);
 
             legendScale = d3.scaleLinear()
-                .domain([0, 900])
+                .domain([0, scale])
                 .range([0, 60 * 5]);
 
             svg.append("g")

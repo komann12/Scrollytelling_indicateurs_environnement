@@ -16,7 +16,6 @@ const diag = dataviz3.select("#viz3_svg");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
 const scroller = scrollama();
-let third_viz_done = false;
 
 function handleResize() {
     var stepH = Math.floor(window.innerHeight * 0.75);
@@ -130,7 +129,7 @@ var sliderTime = d3
         //d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
         year = d3.timeFormat('%Y')(val);
         file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_"+ year +".csv";
-        create_fourth_viz("#viz4_svg", file);
+        create_fourth_viz("#viz4_svg", file, 900);
     });
 
 var gTime = d3
@@ -145,4 +144,4 @@ gTime.call(sliderTime);
 
 //d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
 
-create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2005.csv");
+create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2005.csv", 900);
