@@ -11,7 +11,7 @@ const dataviz4 = scrolly.select("#my_dataviz4");
 const step1_items = dataviz1.selectAll(".step-1");
 const step2_items = dataviz2.selectAll(".step-5");
 const step3_items = dataviz3.selectAll(".step-10");
-const step4_items = dataviz3.selectAll(".step-15");
+const step4_items = dataviz4.selectAll(".step-15");
 const diag = dataviz3.select("#viz3_svg");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
@@ -66,6 +66,12 @@ function handleStepEnter(response) {
         transition_viz3();
     } else if (response.index === 15){
         presentation_viz4();
+    } else if (response.index === 16){
+        prediction_viz4();
+    } else if (response.index === 17){
+        resultat_viz4();
+    } else if (response.index === 18){
+        aller_plus_loin_viz4();
     }
 }
 
@@ -121,7 +127,7 @@ var sliderTime = d3
     .tickValues(dataTime)
     .default(new Date(1998, 10, 3))
     .on('onchange', val => {
-        d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
+        //d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
         year = d3.timeFormat('%Y')(val);
         file = "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_"+ year +".csv";
         create_fourth_viz("#viz4_svg", file);
@@ -137,6 +143,6 @@ var gTime = d3
 
 gTime.call(sliderTime);
 
-d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
+//d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
 
 create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2005.csv");

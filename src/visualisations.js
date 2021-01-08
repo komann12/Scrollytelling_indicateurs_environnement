@@ -234,7 +234,14 @@ function create_fourth_viz(viz, data_csv){
             .enter().append("path")
             .attr("d", path)
             .attr("class", "country")
-            .attr("id", d => d.id);
+            .attr("id", d => d.id)
+            .on("mousemove", (event, d) => {
+                document.getElementById("explain-pays").innerText = d.properties.name + ": "
+                    + d.properties.value + " millions de Tonnes";
+            })
+            .on("mouseout", (event, d) => {
+
+            });
 
         d3.csv(data_csv).then(function(data) {
             // 60 is the number of class in color_viz4.css
@@ -266,6 +273,22 @@ function create_fourth_viz(viz, data_csv){
                 d3.select("#" + e.country)
                     .attr("class", d => "country color-" + quantile(+e.gaz));
             });
+
+            for (var i = 0; i < data.length; i++) {
+                //Nom du pays
+                var dataCountry = data[i].country;
+                //Valeur associee au pays
+                var dataValue = parseInt(data[i].gaz);
+                //Recherche du pays dans le GeoJSON
+                for (var j = 0; j < collection.features.length; j++) {
+                    var jsonCountry = collection.features[j].id;
+                    if (dataCountry === jsonCountry) {
+                        //On injecte la valeur du pays dans le json
+                        collection.features[j].properties.value = dataValue;
+                        break;
+                    }
+                }
+            }
         });
     });
 

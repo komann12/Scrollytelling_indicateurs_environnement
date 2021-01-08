@@ -122,9 +122,25 @@ function transition_viz3(){
 
 function presentation_viz4(){
     dataviz4.classed("invisible", false);
-    step4_items.classed("invisible", false);
+    step4_items.classed("invisible", true);
 }
 
 function prediction_viz4(){
+
+}
+
+function resultat_viz4(){
+    dataviz4.select("#slidertime").classed("invisible", false)
+    document.getElementById("explain-span4").innerText = "Et voilà ! Vous pouvez utiliser le slider pour" +
+        " vérifier que c'est bien la Chine le deuxième pays générant le plus de CO2 dû aux imports.";
+}
+
+function aller_plus_loin_viz4(){
+    dataviz4.classed("invisible", false);
+    document.getElementById("explain-span4").innerText = "Les USA et la Chine écrasent les autrs pays avec leurs émissions de CO2." +
+        " Si on change l'échelle et le scale des couleurs sans prendre en compte ces  2 outliers, voici le résultat:";
+}
+
+function transition_viz4(){
 
 }
