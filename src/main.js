@@ -21,7 +21,7 @@ let third_viz_done = false;
 function handleResize() {
     var stepH = Math.floor(window.innerHeight * 0.75);
     step.style("height", stepH + "px");
-    var figureHeight = window.innerHeight / 1.7;
+    var figureHeight = window.innerHeight / 1.3;
     var figureMarginTop = (window.innerHeight - figureHeight) / 2;
     figure
         .style("height", figureHeight + "px")
