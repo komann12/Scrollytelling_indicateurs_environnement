@@ -4,7 +4,6 @@ let france_data_original = []
 let france_data = []
 let first_viz_xScale;
 let first_viz_yScale;
-let first_viz_done = false;
 
 function draw_first_viz(first_viz_svg, new_data) {
     let line = first_viz_svg.append("path")
@@ -22,8 +21,8 @@ function draw_first_viz(first_viz_svg, new_data) {
 }
 
 function create_first_viz(viz, data_json) {
-    const width = 700;
-    const height = 350;
+    const width = 600;
+    const height = 300;
     const padding = 40;
 
     const svg = d3
@@ -50,7 +49,7 @@ function create_first_viz(viz, data_json) {
         let xAxis = d3.axisBottom(first_viz_xScale)
             .tickFormat(d3.format("d"));
         first_viz_yScale = d3.scaleLinear()
-            .domain([0,d3.max(france_data_original, d => d.value)])
+            .domain([0, 1.5*d3.max(france_data_original, d => d.value)])
             .range([height - padding, padding]);
         let yAxis = d3.axisLeft(first_viz_yScale)
             .tickFormat(d3.format("d"));

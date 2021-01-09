@@ -1,8 +1,16 @@
+let first_viz_done = false;
+let firt_viz_created= false;
+
 function presentation_viz1(){
     step1_items.classed("invisible", true);
 }
 
 function prediction_viz1(){
+    if (!firt_viz_created) {
+        create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_1/ER.H2O.INTR.PC.json");
+        firt_viz_created = true;
+    }
+
     step1_items.classed("invisible", false);
 }
 
@@ -27,6 +35,7 @@ function aller_plus_loin_viz1(){
     dataviz1.classed("invisible", false);
     document.getElementById("explain-span").innerText = "Mais alors à quoi c'est dû ? A la baisse d'eau " +
         "potable dans le monde ou à la hausse de la consommation dans le monde ?";
+    dataviz1.selectAll(".step-4").classed("invisible", false);
 }
 
 function transition_viz1(){

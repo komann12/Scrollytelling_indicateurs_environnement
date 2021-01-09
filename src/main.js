@@ -97,7 +97,6 @@ init();
 
 let current_score = 0;
 
-create_first_viz("#viz1_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_1/ER.H2O.INTR.PC.json");
 
 create_second_viz("#viz2_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_2/ER.H2O.INTR.K3.json");
 

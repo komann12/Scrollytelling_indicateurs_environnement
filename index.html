@@ -27,12 +27,11 @@
 
         <figure id="my_dataviz" class="col-10">
             <h2>L'eau potable <i class="em em-whale"></i></h2>
-            <h1>Eau douce renouvelable (par habitant, m<sup>3</sup>)</h1>
+            <h1>Eau douce renouvelable (France, par habitant, m<sup>3</sup>)</h1>
 
             <div class="row">
-                <span id="explain-span" class="col-2">
+                <span id="explain-span">
                     La disponibilité en eau douce affecte la survie de nombreuses espèces, dont les humains.
-                    Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.
                 </span>
                 <svg id="viz1_svg" class="img-fluid col-8"></svg>
             </div>
@@ -52,8 +51,10 @@
 
 
             <div class="col-12">
-                <span class="step-1 invisible col-12" id="curscore-span"><strong>Votre score actuel : 0</strong></span>
+                <span class="step-1 invisible col-12"><strong id="curscore-span">Votre score actuel : 0</strong></span>
             </div>
+
+            <span class="step-4 invisible">Ces données sont issues de la <a href="https://donnees.banquemondiale.org">banque mondiale</a>.</span>
 
         </figure>
 
@@ -83,7 +84,7 @@
             </form>
 
             <div class="col-12">
-                <span class="step-5 invisible col-12" id="curscore-span2"><strong>Votre score actuel : 0</strong></span>
+                <span class="step-5 invisible col-12"><strong id="curscore-span2">Votre score actuel : 0</strong></span>
             </div>
 
         </figure>
@@ -93,9 +94,10 @@
             <h1>Surface forestière perdue en km carrés</h1>
 
             <form class="step-10 invisible">
+                <span class="col-auto">Faites le pari ! Quelle surface est la plus proche de la surface forestière perdu dans le
+                    monde de 1990 à 2016 ?</span>
+
                 <div class="row justify-content-center align-items-center">
-                    <label class="col-auto" for="bet-select">Faites le pari ! Quelle surface est la plus proche de la surface forestière perdu dans le
-                        monde de 1990 à 2016 ?</label>
                     <div class="col-auto">
                         <input type="radio" id="paris" name="sup"/>
                         <label for="paris">Paris (105 km²)</label>
@@ -118,9 +120,7 @@
                     </div>
             </form>
 
-            <div class="col-8">
-                <span class="step-10 invisible col-12" id="curscore-span3"><strong>Votre score actuel : 0</strong></span>
-            </div>
+            <span class="step-10 invisible col-12"><strong id="curscore-span3">Votre score actuel : 0</strong></span>
 
             <div class="row justify-content-center align-items-center">
                 <span id="explain-span3" class="col-2">
@@ -139,7 +139,7 @@
             <h5 class="invisible step-15">En 2015 quel sera le pays qui aura émis le plus de CO2
                 après les USA ?</h5>
             <div class="col-12">
-                <span class="step-15 invisible col-12" id="curscore-span4"><strong>Votre score actuel : 0</strong></span>
+                <span class="step-15 invisible col-12" ><strong id="curscore-span4">Votre score actuel : 0</strong></span>
             </div>
             <span id="explain-pays" class="col-auto"></span>
             <div id="slidertime" class="row invisible justify-content-center align-items-center">
