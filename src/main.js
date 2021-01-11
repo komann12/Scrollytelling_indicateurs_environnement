@@ -8,11 +8,14 @@ const dataviz1 = scrolly.select("#my_dataviz");
 const dataviz2 = scrolly.select("#my_dataviz2");
 const dataviz3 = scrolly.select("#my_dataviz3");
 const dataviz4 = scrolly.select("#my_dataviz4");
+const dataviz5 = scrolly.select("#my_dataviz5");
 const step1_items = dataviz1.selectAll(".step-1");
 const step2_items = dataviz2.selectAll(".step-5");
 const step3_items = dataviz3.selectAll(".step-10");
 const step4_items = dataviz4.selectAll(".step-15");
+const step5_items = dataviz5.selectAll(".step-20");
 const diag = dataviz3.select("#viz3_svg");
+const diag2 = dataviz5.select("#viz5_svg");
 const article = scrolly.select("article");
 const step = article.selectAll(".step");
 const scroller = scrollama();
@@ -71,6 +74,16 @@ function handleStepEnter(response) {
         resultat_viz4();
     } else if (response.index === 18){
         aller_plus_loin_viz4();
+    } else if (response.index === 19){
+        transition_viz4();
+    } else if (response.index === 20){
+        presentation_viz5();
+    } else if (response.index === 21){
+        prediction_viz5();
+    } else if (response.index === 22){
+        resultat_viz5();
+    } else if (response.index === 23){
+        aller_plus_loin_viz5();
     }
 }
 
@@ -144,3 +157,5 @@ gTime.call(sliderTime);
 //d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
 
 create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2005.csv", 900);
+
+create_fifth_viz("#viz5_svg", "https://github.com/komann12/Scrollytelling_indicateurs_environnement/blob/main/data/viz_5/ElecKWH.json");

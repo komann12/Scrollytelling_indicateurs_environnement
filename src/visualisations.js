@@ -328,3 +328,109 @@ function create_fourth_viz(viz, data_csv, scale){
 
     svg.call(drag);
 }
+
+/*VISU 5*/
+
+let fifth_viz_done = false;
+
+function create_fifth_viz(viz, data_json) {
+    var tooltip = d3
+        .select("#viz5_svg")
+        .append("div")
+        .attr("class", "hidden tooltip");
+
+    d3.json(data_json).then(function (data) {
+        //france_data_original = data["World"];
+        //console.log(data["World"]);
+        let world_data = [];
+        //const years_count = france_data_original.length;
+        for (let i = 1960, year = 1971; i < 2015; i++) {
+            //console.log(data[i][257]);
+            if (data[i][257] != null) {
+                world_data.push([data[i][257], year++]);
+            }
+        }
+
+        var color = d3
+            .scaleQuantize()
+            .range([
+                "#ffffec",
+                "#ffffe0",
+                "#ffffd5",
+                "#ffffca",
+                "#ffffbf",
+                "#ffffb4",
+                "#ffffa8",
+                "#ffff9d",
+                "#ffff92",
+                "#ffff87",
+                "#ffff7b",
+                "#ffff70",
+                "#ffff65",
+                "#ffff5a",
+                "#ffff4f",
+                "#ffff43",
+                "#ffff38",
+                "#ffff2d",
+                "#ffff22",
+                "#ffff16",
+                "#ffff0b",
+                "#ffff00",
+                "#f4f400",
+                "#e9e900",
+                "#dddd00",
+                "#d2d200",
+                "#c7c700",
+                "#bcbc00",
+                "#b0b000",
+                "#a5a500",
+                "#9a9a00",
+                "#8f8f00",
+                "#848400",
+                "#787800",
+                "#6d6d00",
+                "#626200",
+                "#575700",
+                "#4b4b00",
+                "#404000",
+                "#353500",
+                "#2a2a00",
+                "#1f1f00",
+                "#131300",
+                "#080800"
+            ]);
+
+        color.domain([world_data[0][0], world_data[43][0]]);
+
+        var width = 500,
+            height = 200;
+
+        var xScale = d3
+            .scaleLinear()
+            .domain([0, world_data.length])
+            .range([0, width]);
+
+        var svg = d3
+            .select("#viz5_svg")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .style("background-color", "lightgrey");
+
+        svg
+            .selectAll(".bar")
+            .data(world_data)
+            .enter()
+            .append("rect")
+            .attr("x", (d, i) => xScale(i))
+            .attr("y", 0)
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", function (d) {
+                return color(d[0]);
+            })
+            .on("mouseover", function (event, d) {
+                document.getElementById("explain-elec").innerText = Math.round(d[0]) + " KWH en " + d[1];
+            });
+    });
+}

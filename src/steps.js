@@ -163,5 +163,41 @@ function aller_plus_loin_viz4(){
 }
 
 function transition_viz4(){
+    document.body.style.backgroundColor = "#9AA39B";
+    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
+    dataviz4.classed("invisible", true);
+    step4_items.classed("invisible", true);
+    step5_items.classed("invisible", true);
+}
 
+function presentation_viz5(){
+    dataviz5.classed("invisible", false);
+    diag2.classed("invisible",true);
+    step4_items.classed("invisible", true);
+}
+
+function prediction_viz5(){
+    step5_items.classed("invisible", false);
+    document.getElementById("curscore-span5").innerText = `Votre score actuel : ${current_score}`
+}
+
+function resultat_viz5(){
+    diag2.classed("invisible", false);
+    document.getElementById("explain-span5").innerText = "Et voilà ! Vous pouvez utiliser le curseur pour" +
+        " vérifier que de 1971 à 2014, on a environ 1933 KWH supplémentaires par habitant.";
+    if (fifth_viz_done === false) {
+        let bet_val5 = document.getElementById("r3").checked
+        if (bet_val5 === true) {
+            current_score += 1;
+        } else {
+            current_score -= 1;
+        }
+        document.getElementById("curscore-span5").innerText = `Votre score actuel : ${current_score}`
+        fifth_viz_done = true;
+    }
+}
+
+function aller_plus_loin_viz5(){
+    dataviz5.classed("invisible", false);
+    step5_items.classed("invisible", false);
 }
