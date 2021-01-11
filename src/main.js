@@ -158,4 +158,4 @@ gTime.call(sliderTime);
 
 create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2005.csv", 900);
 
-create_fifth_viz("#viz5_svg", "https://github.com/komann12/Scrollytelling_indicateurs_environnement/blob/main/data/viz_5/ElecKWH.json");
+create_fifth_viz("#viz5_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_5/ElecKWH.json");
