@@ -11,4 +11,4 @@
 
 ## Credits
 
--Pour la visualisation du globe avec projection orthographique et rotation: (https://www.datavis.fr/index.php?page=map-world-temperature)
+- Pour la visualisation du globe avec projection orthographique et rotation: (https://www.datavis.fr/index.php?page=map-world-temperature)
