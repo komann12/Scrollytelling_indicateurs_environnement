@@ -9,6 +9,10 @@
 
 ## Datasets
 
+- https://stats.oecd.org/Index.aspx?DataSetCode=IO_GHG_2019
+- https://data.worldbank.org/topic/6
+- https://www.worldclim.org/data/index.html
+
 ## Credits
 
 - Pour la visualisation du globe avec projection orthographique et rotation: (https://www.datavis.fr/index.php?page=map-world-temperature)
