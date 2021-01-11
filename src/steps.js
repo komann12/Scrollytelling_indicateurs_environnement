@@ -18,7 +18,7 @@ function resultat_viz1(){
     document.getElementById("explain-span").innerText = "Et... patatra ! Les ressources en eau douce " +
         "renouvelable ont fortement diminue entre 1985 et 2014 !";
     const svg = d3.select("#viz1_svg")
-    draw_first_viz(svg, france_data_original);
+    draw_first_viz(svg, monde_data_original);
     if (first_viz_done === false) {
         let bet_val = document.getElementById("bet-select").value
         if(bet_val === "dec") {

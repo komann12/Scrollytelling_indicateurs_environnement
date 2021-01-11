@@ -1,7 +1,7 @@
 /* VISU EAU */
 
-let france_data_original = []
-let france_data = []
+let monde_data_original = []
+let monde_data = []
 let first_viz_xScale;
 let first_viz_yScale;
 
@@ -32,24 +32,24 @@ function create_first_viz(viz, data_json) {
         .attr("viewBox", `0 0 ${width} ${height}`);
 
     d3.json(data_json).then(function (data) {
-        france_data_original = data["Monde"]
-        let france_data_1 = [];
-        const years_count = france_data_original.length;
+        monde_data_original = data["Monde"]
+        let monde_data_1 = [];
+        const years_count = monde_data_original.length;
         for (let i = 0; i < years_count; i++) {
             if (i < years_count / 2) {
-                france_data_1.push(france_data_original[i]);
+                monde_data_1.push(monde_data_original[i]);
             }
         }
-        france_data = france_data_1;
+        monde_data = monde_data_1;
 
 
         first_viz_xScale = d3.scaleLinear()
-            .domain(d3.extent(france_data_original, d => d.year))
+            .domain(d3.extent(monde_data_original, d => d.year))
             .range([padding, width - padding]);
         let xAxis = d3.axisBottom(first_viz_xScale)
             .tickFormat(d3.format("d"));
         first_viz_yScale = d3.scaleLinear()
-            .domain([0, 1.5*d3.max(france_data_original, d => d.value)])
+            .domain([0, 1.5*d3.max(monde_data_original, d => d.value)])
             .range([height - padding, padding]);
         let yAxis = d3.axisLeft(first_viz_yScale)
             .tickFormat(d3.format("d"));
@@ -61,7 +61,7 @@ function create_first_viz(viz, data_json) {
             .attr("transform", `translate(${padding}, 0)`)
             .call(yAxis);
 
-        draw_first_viz(svg, france_data_1);
+        draw_first_viz(svg, monde_data_1);
 
     });
 }
