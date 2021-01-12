@@ -24,8 +24,16 @@ body h1 {
     font-size: 3rem;
 }
 
+#outro {
+    color: #000000;
+}
+
+#outro h1 {
+    color: #000000;
+}
+
 #outro a {
-    color: #3b3b3b;
+    color: #3D85C6;
 }
 
 

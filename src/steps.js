@@ -155,7 +155,10 @@ function resultat_viz4(){
 }
 
 function aller_plus_loin_viz4(){
+    document.body.style.backgroundColor = "#9AA39B";
+    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
     dataviz4.classed("invisible", false);
+    step4_items.classed("invisible", false);
     dataviz4.select("#slidertime").classed("invisible", true)
     create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2015.csv",300)
     document.getElementById("explain-span4").innerText = "Les USA et la Chine écrasent les autrs pays avec leurs émissions de CO2." +
@@ -163,11 +166,12 @@ function aller_plus_loin_viz4(){
 }
 
 function transition_viz4(){
-    document.body.style.backgroundColor = "#ffd700";
-    document.getElementById("scrolly").style.backgroundColor = "#ffd700";
+    document.body.style.backgroundColor = "#ffeda0";
+    document.getElementById("scrolly").style.backgroundColor = "#ffeda0";
     dataviz4.classed("invisible", true);
     step4_items.classed("invisible", true);
     step5_items.classed("invisible", true);
+    dataviz5.classed("invisible", true);
 }
 
 function presentation_viz5(){
