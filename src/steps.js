@@ -163,8 +163,8 @@ function aller_plus_loin_viz4(){
 }
 
 function transition_viz4(){
-    document.body.style.backgroundColor = "#9AA39B";
-    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
+    document.body.style.backgroundColor = "#ffd700";
+    document.getElementById("scrolly").style.backgroundColor = "#ffd700";
     dataviz4.classed("invisible", true);
     step4_items.classed("invisible", true);
     step5_items.classed("invisible", true);
