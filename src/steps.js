@@ -2,7 +2,7 @@ let first_viz_done = false;
 let firt_viz_created= false;
 
 function presentation_viz1(){
-    step1_items.classed("invisible", true);
+    //step1_items.classed("invisible", true);
 }
 
 function prediction_viz1(){
@@ -15,8 +15,6 @@ function prediction_viz1(){
 }
 
 function resultat_viz1(){
-    document.getElementById("explain-span").innerText = "Et... patatra ! Les ressources en eau douce " +
-        "renouvelable ont fortement diminue entre 1985 et 2014 !";
     const svg = d3.select("#viz1_svg")
     draw_first_viz(svg, monde_data_original);
     if (first_viz_done === false) {
@@ -26,16 +24,16 @@ function resultat_viz1(){
         } else {
             current_score -= 1;
         }
-        document.getElementById("curscore-span").innerText = `Votre score actuel : ${current_score}`
+        document.getElementById("curscore-span").innerText = `Vous avez ${current_score} point(s)`;
         first_viz_done = true;
     }
+    d3.select(".exp2").classed("invisible", false);
 }
 
 function aller_plus_loin_viz1(){
     dataviz1.classed("invisible", false);
-    document.getElementById("explain-span").innerText = "Mais alors à quoi c'est dû ? A la baisse d'eau " +
-        "potable dans le monde ou à la hausse de la consommation dans le monde ?";
     dataviz1.selectAll(".step-4").classed("invisible", false);
+    d3.select(".exp3").classed("invisible", false);
 }
 
 function transition_viz1(){
@@ -45,17 +43,17 @@ function transition_viz1(){
 
 function presentation_viz2(){
     dataviz2.classed("invisible", false);
-    step2_items.classed("invisible", true);
+    if(!second_viz_done) {
+        step2_items.classed("invisible", true);
+    }
 }
 
 function prediction_viz2(){
     step2_items.classed("invisible", false);
-    document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`;
+    document.getElementById("curscore-span2").innerText = `Vous avez ${current_score} point(s)`;
 }
 
 function resultat_viz2(){
-    document.getElementById("explain-span2").innerText = "Et... en fait les ressources en eau douce " +
-        "renouvelable sont restés quasiment les mêmes entre 1985 et 2014 ! ";
     const svg = d3.select("#viz2_svg");
     draw_second_viz(svg, france_data_original2);
     if (second_viz_done === false) {
@@ -65,16 +63,17 @@ function resultat_viz2(){
         } else {
             current_score -= 1;
         }
-        document.getElementById("curscore-span2").innerText = `Votre score actuel : ${current_score}`
+        document.getElementById("curscore-span2").innerText = `Vous avez ${current_score} point(s)`;
         second_viz_done = true;
     }
+    d3.select(".exp4").classed("invisible", false);
 }
 
 function aller_plus_loin_viz2(){
     dataviz2.classed("invisible", false);
     document.body.style.backgroundColor = "#0D3D56";
     document.getElementById("scrolly").style.backgroundColor = "#0D3D56";
-    document.getElementById("explain-span2").innerText = "La population augmente mais les ressources en eau potables n'augmentent pas du tout, c'est problématique !";
+    d3.select(".exp5").classed("invisible", false);
 }
 
 function transition_viz2(){
@@ -88,18 +87,18 @@ function transition_viz2(){
 
 function presentation_viz3(){
     dataviz3.classed("invisible", false);
-    step3_items.classed("invisible", true);
+    if(!third_viz_done) {
+        step3_items.classed("invisible", true);
+    }
 }
 
 function prediction_viz3(){
     step3_items.classed("invisible", false);
-    document.getElementById("curscore-span3").innerText = `Votre score actuel : ${current_score}`;
+    document.getElementById("curscore-span3").innerText = `Vous avez ${current_score} point(s)`;
 }
 
 function resultat_viz3(){
     diag.classed("invisible", false);
-    document.getElementById("explain-span3").innerText = "La surface de forêt " +
-        "disparue entre 1985 et 2016 est de 1 324 449 km2. Donc la réponse la plus proche c'est la france";
     const svg = d3.select("#viz3_svg");
     if (third_viz_done === false) {
         let bet_val = document.getElementById("france").checked
@@ -108,9 +107,10 @@ function resultat_viz3(){
         } else {
             current_score -= 1;
         }
-        document.getElementById("curscore-span3").innerText = `Votre score actuel : ${current_score}`
+        document.getElementById("curscore-span3").innerText = `Vous avez ${current_score} point(s)`;
         third_viz_done = true;
     }
+    d3.select(".exp6").classed("invisible", false);
 }
 
 function aller_plus_loin_viz3(){
@@ -132,11 +132,11 @@ function transition_viz3(){
 function presentation_viz4(){
     dataviz4.classed("invisible", false);
     step4_items.classed("invisible", true);
+    document.getElementById("curscore-span4").innerText = `Vous avez ${current_score} point(s)`;
 }
 
 function prediction_viz4(){
     step4_items.classed("invisible", false);
-    document.getElementById("curscore-span4").innerText = `Votre score actuel : ${current_score}`
 }
 
 function resultat_viz4(){
@@ -149,7 +149,7 @@ function resultat_viz4(){
         } else {
             current_score -= 1;
         }
-        document.getElementById("curscore-span4").innerText = `Votre score actuel : ${current_score}`
+        document.getElementById("curscore-span4").innerText = `Vous avez ${current_score} point(s)`;
         fourth_viz_done = true;
     }
 }
@@ -158,7 +158,6 @@ function aller_plus_loin_viz4(){
     document.body.style.backgroundColor = "#444B44";
     document.getElementById("scrolly").style.backgroundColor = "#444B44";
     dataviz4.classed("invisible", false);
-    step4_items.classed("invisible", false);
     dataviz4.select("#slidertime").classed("invisible", true)
     create_fourth_viz("#viz4_svg", "https://komann12.github.io/Scrollytelling_indicateurs_environnement/data/viz_4/emissions_import_2015.csv",300)
     document.getElementById("explain-span4").innerText = "Les USA et la Chine écrasent les autrs pays avec leurs émissions de CO2." +
@@ -182,7 +181,7 @@ function presentation_viz5(){
 
 function prediction_viz5(){
     step5_items.classed("invisible", false);
-    document.getElementById("curscore-span5").innerText = `Votre score actuel : ${current_score}`
+    document.getElementById("curscore-span5").innerText = `Vous avez ${current_score} point(s)`;
 }
 
 function resultat_viz5(){
@@ -196,7 +195,7 @@ function resultat_viz5(){
         } else {
             current_score -= 1;
         }
-        document.getElementById("curscore-span5").innerText = `Votre score actuel : ${current_score}`
+        document.getElementById("curscore-span5").innerText = `Vous avez ${current_score} point(s)`;
         fifth_viz_done = true;
     }
 }
@@ -204,4 +203,5 @@ function resultat_viz5(){
 function aller_plus_loin_viz5(){
     dataviz5.classed("invisible", false);
     step5_items.classed("invisible", false);
+    document.getElementById("finscore").innerText = `${current_score} points !`
 }

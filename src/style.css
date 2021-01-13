@@ -1,7 +1,10 @@
 body, #scrolly {
     background-color: #0D3D56;
-    font-family: 'Noto Sans', sans-serif;
     color: #ffffff;
+}
+
+body, h1, h2 {
+    font-family: 'Hind Madurai', sans-serif !important;
 }
 
 a {
@@ -43,8 +46,8 @@ article h1 {
     color: #ffffff;
 }
 
-#outro a {
-    color: #3D85C6;
+form {
+    margin-bottom: 1rem;
 }
 
 figure {
@@ -87,9 +90,12 @@ figure svg {
     color: #ffffff;
 }
 
-#world {
+#viz4_svg, #world {
+    background-color: #fff;
+    border-radius: 1rem;
     display: block;
     margin: auto;
+    margin-top: 1rem;
 }
 
 .country:hover {

@@ -90,8 +90,8 @@ function draw_second_viz(viz_svg, new_data) {
 }
 
 function create_second_viz(viz, data_json) {
-    const width = 700;
-    const height = 350;
+    const width = 600;
+    const height = 300;
     const padding = 40;
 
     const svg = d3
@@ -155,7 +155,7 @@ function create_third_viz(viz) {
         ]
     ];
 
-    const width = 500;
+    const width = 600;
     const height = 120;
     const padding = 40;
 
@@ -208,12 +208,12 @@ pays_prediction = "";
 let fourth_viz_done = false;
 
 function create_fourth_viz(viz, data_csv, scale){
-    const width = 800, height = 800;
+    const width = 800, height = 400;
 
     const projection = d3.geoOrthographic()
         .scale(130)
         .translate([width / 3, height / 5])
-        .clipAngle(90) // without this options countries on the other side are visible
+        .clipAngle(90)
         .precision(.1)
         .rotate([0,0,0]);
 
@@ -228,6 +228,7 @@ function create_fourth_viz(viz, data_csv, scale){
     // Append all meridians and parallels
     const graticule = d3.geoGraticule();
     svg.append("path")
+        .attr('transform', 'translate(100, 100)')
         .datum(graticule)
         .attr("class", "graticule")
         .attr("d", path);
@@ -235,7 +236,9 @@ function create_fourth_viz(viz, data_csv, scale){
     d3.json("data/viz_4/world-countries.json").then(function(collection) {
         var countries = svg.selectAll("path")
             .data(collection.features)
-            .enter().append("path")
+            .enter()
+            .append("path")
+            .attr('transform', 'translate(100, 100)')
             .attr("d", path)
             .attr("class", "country")
             .attr("id", d => d.id)
@@ -274,7 +277,8 @@ function create_fourth_viz(viz, data_csv, scale){
                 .range([0, 60 * 5]);
 
             svg.append("g")
-                .attr('transform', 'translate(25, 10)')
+                .attr('transform', 'translate(30, 10)')
+                .attr('color', "#000")
                 .call(d3.axisLeft(legendScale).ticks(10));
 
             data.forEach(function(e,i) {
@@ -401,7 +405,7 @@ function create_fifth_viz(viz, data_json) {
 
         color.domain([world_data[0][0], world_data[43][0]]);
 
-        var width = 500,
+        var width = 800,
             height = 200;
 
         var xScale = d3
