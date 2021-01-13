@@ -16,8 +16,7 @@ const step4_items = dataviz4.selectAll(".step-15");
 const step5_items = dataviz5.selectAll(".step-20");
 const diag = dataviz3.select("#viz3_svg");
 const diag2 = dataviz5.select("#viz5_svg");
-const article = scrolly.select("article");
-const step = article.selectAll(".step");
+const step = d3.selectAll(".step");
 const scroller = scrollama();
 
 function handleResize() {
