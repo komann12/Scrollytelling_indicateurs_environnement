@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Scrollytelling des indicateurs de l'Environnement</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <script src="src/lib/http_d3js.org_d3.v6.js"></script>
+    <script src="src/lib/http_unpkg.com_d3-simple-slider.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://unpkg.com/intersection-observer"></script>
-    <script src="https://unpkg.com/scrollama"></script>
+    <script src="src/lib/http_unpkg.com_intersection-observer.js"></script>
+    <script src="src/lib/http_unpkg.com_scrollama.js"></script>
     <link href="src/style.css" rel="stylesheet">
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="src/color_viz4.css">
@@ -26,8 +29,7 @@
     <section id="scrolly" class="row">
 
         <figure id="my_dataviz" class="col-10">
-            <h2>L'eau potable <i class="em em-whale"></i></h2>
-            <h1>Eau douce renouvelable (Monde, par habitant, m<sup>3</sup>)</h1>
+            <h1>Eau douce renouvelable (Monde, par habitant, m<sup>3</sup>) <i class="em em-whale"></i></h1>
 
             <div class="row">
                 <span id="explain-span">
@@ -212,10 +214,10 @@
 
         <article class="col-2">
             <div id="presentation_viz1" class="step" data-step="1">
-                <h1>Présentation</h1>
+                <h1>Eau renouvelable</h1>
             </div>
             <div class="step" data-step="2">
-                <h1>Prédiction</h1>
+                <h1>Évolution de l'eau</h1>
             </div>
             <div class="step" data-step="3">
                 <h1>Résultats</h1>
@@ -227,10 +229,10 @@
                 <h1></h1>
             </div>
             <div class="step" data-step="6">
-                <h1>Présentation</h1>
+                <h1>Réserves d'eau douce</h1>
             </div>
             <div class="step" data-step="7">
-                <h1>Prédiction</h1>
+                <h1>Évolution des réserves</h1>
             </div>
             <div class="step" data-step="8">
                 <h1>Résultats</h1>
@@ -242,10 +244,10 @@
                 <h1></h1>
             </div>
             <div class="step" data-step="11">
-                <h1>Présentation</h1>
+                <h1>Surface Forestière</h1>
             </div>
             <div class="step" data-step="12">
-                <h1>Prédiction</h1>
+                <h1>Évolution des forêts</h1>
             </div>
             <div class="step" data-step="13">
                 <h1>Résultats</h1>
@@ -257,10 +259,10 @@
                 <h1></h1>
             </div>
             <div class="step" data-step="16">
-                <h1>Présentation</h1>
+                <h1>CO2 lié aux imports</h1>
             </div>
             <div class="step" data-step="17">
-                <h1>Prédiction</h1>
+                <h1>Évolution du CO2</h1>
             </div>
             <div class="step" data-step="18">
                 <h1>Résultats</h1>
@@ -272,10 +274,10 @@
                 <h1></h1>
             </div>
             <div class="step" data-step="21">
-                <h1>Présentation</h1>
+                <h1>kWh par habitant</h1>
             </div>
             <div class="step" data-step="22">
-                <h1>Prédiction</h1>
+                <h1>Évolution kWh/hab</h1>
             </div>
             <div class="step" data-step="23">
                 <h1>Résultats</h1>

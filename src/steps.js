@@ -72,8 +72,8 @@ function resultat_viz2(){
 
 function aller_plus_loin_viz2(){
     dataviz2.classed("invisible", false);
-    document.body.style.backgroundColor = "#02aded";
-    document.getElementById("scrolly").style.backgroundColor = "#02aded";
+    document.body.style.backgroundColor = "#0D3D56";
+    document.getElementById("scrolly").style.backgroundColor = "#0D3D56";
     document.getElementById("explain-span2").innerText = "La population augmente mais les ressources en eau potables n'augmentent pas du tout, c'est problématique !";
 }
 
@@ -82,8 +82,8 @@ function transition_viz2(){
     diag.classed("invisible", true);
     dataviz3.classed("invisible", true);
     step3_items.classed("invisible", true);
-    document.body.style.backgroundColor = "#6e8b3d";
-    document.getElementById("scrolly").style.backgroundColor = "#6e8b3d";
+    document.body.style.backgroundColor = "#829356";
+    document.getElementById("scrolly").style.backgroundColor = "#829356";
 }
 
 function presentation_viz3(){
@@ -116,13 +116,13 @@ function resultat_viz3(){
 function aller_plus_loin_viz3(){
     dataviz3.classed("invisible", false);
     step3_items.classed("invisible", false);
-    document.body.style.backgroundColor = "#6e8b3d";
-    document.getElementById("scrolly").style.backgroundColor = "#6e8b3d";
+    document.body.style.backgroundColor = "#829356";
+    document.getElementById("scrolly").style.backgroundColor = "#829356";
 }
 
 function transition_viz3(){
-    document.body.style.backgroundColor = "#9AA39B";
-    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
+    document.body.style.backgroundColor = "#444B44";
+    document.getElementById("scrolly").style.backgroundColor = "#444B44";
     dataviz3.classed("invisible", true);
     step3_items.classed("invisible", true);
     dataviz4.classed("invisible", true);
@@ -155,8 +155,8 @@ function resultat_viz4(){
 }
 
 function aller_plus_loin_viz4(){
-    document.body.style.backgroundColor = "#9AA39B";
-    document.getElementById("scrolly").style.backgroundColor = "#9AA39B";
+    document.body.style.backgroundColor = "#444B44";
+    document.getElementById("scrolly").style.backgroundColor = "#444B44";
     dataviz4.classed("invisible", false);
     step4_items.classed("invisible", false);
     dataviz4.select("#slidertime").classed("invisible", true)
@@ -166,8 +166,8 @@ function aller_plus_loin_viz4(){
 }
 
 function transition_viz4(){
-    document.body.style.backgroundColor = "#ffeda0";
-    document.getElementById("scrolly").style.backgroundColor = "#ffeda0";
+    document.body.style.backgroundColor = "#093145";
+    document.getElementById("scrolly").style.backgroundColor = "#093145";
     dataviz4.classed("invisible", true);
     step4_items.classed("invisible", true);
     step5_items.classed("invisible", true);

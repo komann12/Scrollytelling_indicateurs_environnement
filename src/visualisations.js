@@ -9,7 +9,7 @@ function draw_first_viz(first_viz_svg, new_data) {
     let line = first_viz_svg.append("path")
         .datum(new_data)
         .attr("fill", "none")
-        .attr("stroke", "#02aded")
+        .attr("stroke", "#40CAFC")
         .attr("stroke-width", 5)
         .attr("d", d3.line()
             .x(d => first_viz_xScale(d.year))
@@ -145,7 +145,7 @@ function create_third_viz(viz) {
     var surfaceFrance = 643801;
     var surfaceTotale = 1324449;//data[1990][34822] - data[2016][34822];
     var superficies = [
-        ["Paris", "Londre", "Pekin", "France", "Forêts"],
+        ["Paris", "Londres", "Pekin", "France", "Forêts"],
         [
             surfaceParis,
             surfaceLondre,
@@ -186,7 +186,7 @@ function create_third_viz(viz) {
         .attr("y", (d) => height - yScale(d))
         .attr("width", xScale(0.9))
         .attr("height", (d) => yScale(d))
-        .attr("fill", "#6e8b3d");
+        .attr("fill", "#424c1e");
 
     svg
         .selectAll("text")
@@ -198,8 +198,7 @@ function create_third_viz(viz) {
         .text(function (d) {
             return d;
         })
-        .style("fill", "blue");
-    ;
+        .style("fill", "#fff");
 }
 
 /* VISU 4 */

@@ -1,17 +1,28 @@
-body {
-    background-color: #02aded;
+body, #scrolly {
+    background-color: #0D3D56;
+    font-family: 'Noto Sans', sans-serif;
+    color: #ffffff;
+}
+
+a {
+    color: #fff;
 }
 
 body h1 {
-    color: #fff;
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
     margin-bottom: 1rem;
+}
+
+article h1 {
+    border-left: 2px dashed white;
 }
 
 #intro, #outro {
     height: 100vh;
     line-height: 100vh;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
 }
 
 #intro div, #outro div {
@@ -25,25 +36,18 @@ body h1 {
 }
 
 #outro {
-    color: #000000;
+    color: #fdfdfd;
 }
 
 #outro h1 {
-    color: #000000;
+    color: #ffffff;
 }
 
 #outro a {
     color: #3D85C6;
 }
 
-
-#scrolly {
-    background-color: #02aded;
-}
-
 figure {
-    border-radius: 1rem;
-    background-color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 0;
@@ -52,8 +56,12 @@ figure {
 }
 
 figure h1 {
-    color: #3b3b3b;
+    color: #ffffff;
     font-size: 1.5rem;
+}
+
+figure h2 {
+    color: #ffffff;
 }
 
 figure svg {
@@ -62,12 +70,12 @@ figure svg {
 }
 
 .step {
-    color: #fff;
+    color: #ffffff;
 }
 
 .step h1 {
     writing-mode: vertical-rl;
-    color: #3b3b3b;
+    color: #d2d2d2;
     font-size: 3rem;
 }
 
@@ -76,7 +84,7 @@ figure svg {
 }
 
 .step.is-active h1 {
-    color: #fff;
+    color: #ffffff;
 }
 
 #world {
