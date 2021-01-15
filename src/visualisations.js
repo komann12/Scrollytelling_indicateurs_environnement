@@ -256,25 +256,27 @@ function create_fourth_viz(viz, data_csv, scale){
 
         d3.csv(data_csv).then(function(data) {
             // 60 is the number of class in color_viz4.css
-            var quantile = d3.scaleQuantile().domain([0, scale])
-                .range(d3.range(60));
+            var quantile = d3.scaleQuantile().domain([scale, 0])
+                .range(d3.range(8));
 
             var legend = svg.append('g')
                 .attr('transform', 'translate(35, 10)')
                 .attr('id', 'legend');
 
+
             legend.selectAll('.colorbar')
-                .data(d3.range(60))
+                .data(d3.range(8))
                 .enter().append('rect')
-                .attr('y', d => d * 5 + 'px')
-                .attr('height', '5px')
+                .attr('y', d => d * 35 + 'px')
+                .attr('height', '35px')
                 .attr('width', '20px')
                 .attr('x', '0px')
-                .attr("class", d => "color-" + d);
+                .attr("class", d => "color-" + d)
+                .attr("transform","rotate(180) translate(-15, -281)");
 
             legendScale = d3.scaleLinear()
-                .domain([0, scale])
-                .range([0, 60 * 5]);
+                .domain([scale, 0])
+                .range([0, 8 * 35]);
 
             svg.append("g")
                 .attr('transform', 'translate(30, 10)')
