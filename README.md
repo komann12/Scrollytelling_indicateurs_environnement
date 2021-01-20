@@ -7,6 +7,7 @@
 - Student project from Lyon 1 University
 - [Course Page](https://lyondataviz.github.io/teaching/lyon1-m2/2020)
 - [Cahier d'avancement](https://github.com/komann12/Scrollytelling_indicateurs_environnement/wiki/Cahier-d'avancement)
+- [Document de cadrage](https://github.com/komann12/Scrollytelling_indicateurs_environnement/wiki/Document-de-cadrage)
 - [Wiki](https://github.com/komann12/Scrollytelling_indicateurs_environnement/wiki)
 
 ## Datasets
