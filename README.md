@@ -1,5 +1,7 @@
 # Environmental scrollytelling with predictions
 
+![thumbnail](https://github.com/komann12/Scrollytelling_indicateurs_environnement/blob/main/thumbnail.png)
+
 [📊 Demonstration page here](https://komann12.github.io/Scrollytelling_indicateurs_environnement/index.html)
 
 ## Description
