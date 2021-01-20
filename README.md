@@ -19,6 +19,9 @@
 
 - [Visualisation du globe avec projection orthographique et rotation](https://www.datavis.fr/index.php?page=map-world-temperature)
 - [Scrollama](https://github.com/russellgoldenberg/scrollama)
+- [Data viz](https://lyondataviz.github.io/teaching/lyon1-m2/2020/projets.html)
+- [Université de Lyon 1](https://www.univ-lyon1.fr/)
+- [Master Data Science](http://master-info.univ-lyon1.fr/DS/)
 
 ## Contributors
 
