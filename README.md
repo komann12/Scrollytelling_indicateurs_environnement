@@ -6,6 +6,10 @@
 
 ## Description
 
+Nous souhaitions informer et sensibiliser sur les différents indicateurs du dérèglement climatique. Nous avons pour cela expérimenté différentes techniques permettant d'engager l'utilisateur lorsqu'il consulte nos visualisations; par exemple en lui proposant d'effectuer des prédictions sur nos indicateurs. Nous avons aussi choisi de tester l'approche scrollytelling afin de rendre l'expérience de l'utilisateur plus ludique et de l'encourager à consulter le site le plus longtemps possible.
+
+We wanted to inform and raise awareness about the various indicators of climate change. We have therefore experimented with different techniques to engage the user when he consults our visualizations; for example by proposing to make predictions on our indicators. We also chose to test the scrollytelling approach in order to make the user’s experience more fun and encourage them to visit the site as long as possible.
+
 - Student project from Lyon 1 University
 - [Course Page](https://lyondataviz.github.io/teaching/lyon1-m2/2020)
 - [Cahier d'avancement](https://github.com/komann12/Scrollytelling_indicateurs_environnement/wiki/Cahier-d'avancement)
